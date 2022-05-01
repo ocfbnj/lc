@@ -1,30 +1,6 @@
 pub struct Solution;
 
 impl Solution {
-    fn dfs(i: i32, j: i32, heights: &[Vec<i32>], ocean: &mut [Vec<bool>]) {
-        let m = ocean.len() as i32;
-        let n = ocean[0].len() as i32;
-
-        if ocean[i as usize][j as usize] {
-            return;
-        }
-        ocean[i as usize][j as usize] = true;
-
-        for (a, b) in [(-1, 0), (1, 0), (0, -1), (0, 1)] {
-            let next_i = i + a;
-            let next_j = j + b;
-
-            if next_i < m
-                && next_j < n
-                && next_i >= 0
-                && next_j >= 0
-                && heights[next_i as usize][next_j as usize] >= heights[i as usize][j as usize]
-            {
-                Self::dfs(next_i, next_j, heights, ocean);
-            }
-        }
-    }
-
     pub fn pacific_atlantic(heights: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         let m = heights.len() as i32;
         let n = heights[0].len() as i32;
@@ -52,6 +28,30 @@ impl Solution {
         }
 
         return res;
+    }
+
+    fn dfs(i: i32, j: i32, heights: &[Vec<i32>], ocean: &mut [Vec<bool>]) {
+        let m = ocean.len() as i32;
+        let n = ocean[0].len() as i32;
+
+        if ocean[i as usize][j as usize] {
+            return;
+        }
+        ocean[i as usize][j as usize] = true;
+
+        for (a, b) in [(-1, 0), (1, 0), (0, -1), (0, 1)] {
+            let next_i = i + a;
+            let next_j = j + b;
+
+            if next_i < m
+                && next_j < n
+                && next_i >= 0
+                && next_j >= 0
+                && heights[next_i as usize][next_j as usize] >= heights[i as usize][j as usize]
+            {
+                Self::dfs(next_i, next_j, heights, ocean);
+            }
+        }
     }
 }
 

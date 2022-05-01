@@ -1,15 +1,13 @@
-#![allow(dead_code)]
-
 pub struct Solution {
     nums: Vec<i32>,
 }
 
 impl Solution {
-    fn new(nums: Vec<i32>) -> Self {
+    pub fn new(nums: Vec<i32>) -> Self {
         Solution { nums }
     }
 
-    fn pick(&self, target: i32) -> i32 {
+    pub fn pick(&self, target: i32) -> i32 {
         use rand::Rng;
 
         let mut count = 0;

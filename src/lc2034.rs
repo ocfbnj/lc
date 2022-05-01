@@ -58,13 +58,12 @@ impl StockPrice {
 #[test]
 fn test() {
     let mut stock_price = StockPrice::new();
-    stock_price.update(1, 10); // 时间戳为 [1] ，对应的股票价格为 [10] 。
-    stock_price.update(2, 5); // 时间戳为 [1,2] ，对应的股票价格为 [10,5] 。
-    assert_eq!(stock_price.current(), 5); // 返回 5 ，最新时间戳为 2 ，对应价格为 5 。
-    assert_eq!(stock_price.maximum(), 10); // 返回 10 ，最高价格的时间戳为 1 ，价格为 10 。
-    stock_price.update(1, 3); // 之前时间戳为 1 的价格错误，价格更新为 3 。
-                              // 时间戳为 [1,2] ，对应股票价格为 [3,5] 。
-    assert_eq!(stock_price.maximum(), 5); // 返回 5 ，更正后最高价格为 5 。
-    stock_price.update(4, 2); // 时间戳为 [1,2,4] ，对应价格为 [3,5,2] 。
-    assert_eq!(stock_price.minimum(), 2); // 返回 2 ，最低价格时间戳为 4 ，价格为 2 。
+    stock_price.update(1, 10);
+    stock_price.update(2, 5);
+    assert_eq!(stock_price.current(), 5);
+    assert_eq!(stock_price.maximum(), 10);
+    stock_price.update(1, 3);
+    assert_eq!(stock_price.maximum(), 5);
+    stock_price.update(4, 2);
+    assert_eq!(stock_price.minimum(), 2);
 }

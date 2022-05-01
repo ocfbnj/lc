@@ -1,13 +1,9 @@
-use crate::types::*;
+use crate::types::ListNode;
 
 pub struct Solution {
     head: Option<Box<ListNode>>,
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl Solution {
     pub fn new(head: Option<Box<ListNode>>) -> Self {
         Solution { head }

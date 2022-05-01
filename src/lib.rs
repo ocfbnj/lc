@@ -1,6 +1,7 @@
 pub mod types;
 
 pub mod lc1220;
+pub mod lc1305;
 pub mod lc1332;
 pub mod lc1345;
 pub mod lc1503;
@@ -37,5 +38,6 @@ pub mod lc819;
 pub mod lc821;
 pub mod lc838;
 pub mod lc883;
+pub mod lc908;
 pub mod lc917;
 pub mod lc969;

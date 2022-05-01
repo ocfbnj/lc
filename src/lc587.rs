@@ -2,6 +2,10 @@ pub struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
+    pub fn outer_trees(trees: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        Self::andrew(trees)
+    }
+
     fn cross(o: &[i32], a: &[i32], b: &[i32]) -> i32 {
         return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
     }
@@ -88,10 +92,6 @@ impl Solution {
         res.append(&mut st.into_iter().skip(1).cloned().collect());
 
         return res;
-    }
-
-    pub fn outer_trees(trees: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        Self::andrew(trees)
     }
 }
 

@@ -2,10 +2,6 @@ pub struct AllOne {
     hash_map: std::collections::HashMap<String, usize>,
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl AllOne {
     pub fn new() -> Self {
         AllOne {
