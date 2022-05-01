@@ -8,5 +8,3 @@ authors = ["ocfbnj"]
 
 [dependencies]
 rand = "0.8.5"
-libc = "0.2.119"
-futures = "0.3"
