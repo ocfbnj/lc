@@ -52,7 +52,7 @@ mod tests {
 
         let solution = Solution::new(node);
 
-        let array = [0, 1, 2, 3];
+        let array = [0, 1, 2, 3, 4];
         assert!(array.contains(&solution.get_random()));
         assert!(array.contains(&solution.get_random()));
         assert!(array.contains(&solution.get_random()));
