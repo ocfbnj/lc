@@ -25,10 +25,15 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::shortest_to_char("loveleetcode".to_owned(), 'e'),
-        vec![3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::shortest_to_char("loveleetcode".to_owned(), 'e'),
+            vec![3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
+        );
+    }
 }

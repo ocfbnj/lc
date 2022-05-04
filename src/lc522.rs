@@ -47,55 +47,60 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::find_lu_slength(vec!["aaa".to_owned(), "aaa".to_owned(), "aa".to_owned()]),
-        -1
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::find_lu_slength(vec!["aba".to_owned(), "cdc".to_owned(), "eae".to_owned()]),
-        3
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::find_lu_slength(vec!["aaa".to_owned(), "aaa".to_owned(), "aa".to_owned()]),
+            -1
+        );
 
-    assert_eq!(
-        Solution::find_lu_slength(vec![
-            "aabbcc".to_owned(),
-            "aabbcc".to_owned(),
-            "c".to_owned(),
-            "e".to_owned(),
-            "aabbcd".to_owned()
-        ]),
-        6
-    );
+        assert_eq!(
+            Solution::find_lu_slength(vec!["aba".to_owned(), "cdc".to_owned(), "eae".to_owned()]),
+            3
+        );
 
-    assert_eq!(
-        Solution::find_lu_slength(vec![
-            "aabbcc".to_owned(),
-            "aabbcc".to_owned(),
-            "cb".to_owned(),
-            "abc".to_owned(),
-            "mmnnqq".to_owned()
-        ]),
-        6
-    );
+        assert_eq!(
+            Solution::find_lu_slength(vec![
+                "aabbcc".to_owned(),
+                "aabbcc".to_owned(),
+                "c".to_owned(),
+                "e".to_owned(),
+                "aabbcd".to_owned()
+            ]),
+            6
+        );
 
-    assert_eq!(
-        Solution::find_lu_slength(vec![
-            "a".to_owned(),
-            "b".to_owned(),
-            "c".to_owned(),
-            "d".to_owned(),
-            "e".to_owned(),
-            "f".to_owned(),
-            "a".to_owned(),
-            "b".to_owned(),
-            "c".to_owned(),
-            "d".to_owned(),
-            "e".to_owned(),
-            "f".to_owned()
-        ]),
-        -1
-    );
+        assert_eq!(
+            Solution::find_lu_slength(vec![
+                "aabbcc".to_owned(),
+                "aabbcc".to_owned(),
+                "cb".to_owned(),
+                "abc".to_owned(),
+                "mmnnqq".to_owned()
+            ]),
+            6
+        );
+
+        assert_eq!(
+            Solution::find_lu_slength(vec![
+                "a".to_owned(),
+                "b".to_owned(),
+                "c".to_owned(),
+                "d".to_owned(),
+                "e".to_owned(),
+                "f".to_owned(),
+                "a".to_owned(),
+                "b".to_owned(),
+                "c".to_owned(),
+                "d".to_owned(),
+                "e".to_owned(),
+                "f".to_owned()
+            ]),
+            -1
+        );
+    }
 }

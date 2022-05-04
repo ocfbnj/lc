@@ -39,15 +39,20 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::complex_number_multiply("1+1i".to_owned(), "1+1i".to_owned()),
-        "0+2i".to_owned()
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::complex_number_multiply("1+-1i".to_owned(), "1+-1i".to_owned()),
-        "0+-2i".to_owned()
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::complex_number_multiply("1+1i".to_owned(), "1+1i".to_owned()),
+            "0+2i".to_owned()
+        );
+
+        assert_eq!(
+            Solution::complex_number_multiply("1+-1i".to_owned(), "1+-1i".to_owned()),
+            "0+-2i".to_owned()
+        );
+    }
 }

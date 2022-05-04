@@ -30,25 +30,30 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::nearest_palindromic(String::from("123")),
-        String::from("121")
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::nearest_palindromic(String::from("1")),
-        String::from("0")
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::nearest_palindromic(String::from("123")),
+            String::from("121")
+        );
 
-    assert_eq!(
-        Solution::nearest_palindromic(String::from("8")),
-        String::from("7")
-    );
+        assert_eq!(
+            Solution::nearest_palindromic(String::from("1")),
+            String::from("0")
+        );
 
-    assert_eq!(
-        Solution::nearest_palindromic(String::from("10")),
-        String::from("9")
-    );
+        assert_eq!(
+            Solution::nearest_palindromic(String::from("8")),
+            String::from("7")
+        );
+
+        assert_eq!(
+            Solution::nearest_palindromic(String::from("10")),
+            String::from("9")
+        );
+    }
 }

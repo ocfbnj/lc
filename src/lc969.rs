@@ -23,10 +23,15 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::pancake_sort(vec![3, 2, 4, 1]),
-        vec![3, 4, 2, 3, 1, 2]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::pancake_sort(vec![3, 2, 4, 1]),
+            vec![3, 4, 2, 3, 1, 2]
+        );
+    }
 }

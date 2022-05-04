@@ -9,9 +9,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::remove_palindrome_sub("ababa".to_owned()), 1);
-    assert_eq!(Solution::remove_palindrome_sub("abb".to_owned()), 2);
-    assert_eq!(Solution::remove_palindrome_sub("baabb".to_owned()), 2);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::remove_palindrome_sub("ababa".to_owned()), 1);
+        assert_eq!(Solution::remove_palindrome_sub("abb".to_owned()), 2);
+        assert_eq!(Solution::remove_palindrome_sub("baabb".to_owned()), 2);
+    }
 }

@@ -36,16 +36,21 @@ impl AllOne {
     }
 }
 
-#[test]
-fn test() {
-    let mut all_one = AllOne::new();
-    all_one.inc("hello".to_owned());
-    all_one.inc("hello".to_owned());
-    assert_eq!(all_one.get_max_key(), "hello".to_owned());
-    assert_eq!(all_one.get_min_key(), "hello".to_owned());
-    all_one.inc("leet".to_owned());
-    assert_eq!(all_one.get_max_key(), "hello".to_owned());
-    assert_eq!(all_one.get_min_key(), "leet".to_owned());
-    all_one.dec("leet".to_owned());
-    assert_eq!(all_one.get_min_key(), "hello".to_owned());
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let mut all_one = AllOne::new();
+        all_one.inc("hello".to_owned());
+        all_one.inc("hello".to_owned());
+        assert_eq!(all_one.get_max_key(), "hello".to_owned());
+        assert_eq!(all_one.get_min_key(), "hello".to_owned());
+        all_one.inc("leet".to_owned());
+        assert_eq!(all_one.get_max_key(), "hello".to_owned());
+        assert_eq!(all_one.get_min_key(), "leet".to_owned());
+        all_one.dec("leet".to_owned());
+        assert_eq!(all_one.get_min_key(), "hello".to_owned());
+    }
 }

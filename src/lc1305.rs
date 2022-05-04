@@ -57,36 +57,41 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    let root1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-    })));
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let root2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    #[test]
+    fn test() {
+        let root1 = Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+        })));
 
-    assert_eq!(
-        Solution::get_all_elements(root1, root2),
-        vec![0, 1, 1, 2, 3, 4]
-    );
+        let root2 = Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+        })));
 
-    let root1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-    })));
+        assert_eq!(
+            Solution::get_all_elements(root1, root2),
+            vec![0, 1, 1, 2, 3, 4]
+        );
 
-    let root2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 8,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: None,
-    })));
+        let root1 = Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+        })));
 
-    assert_eq!(Solution::get_all_elements(root1, root2), vec![1, 1, 8, 8]);
+        let root2 = Some(Rc::new(RefCell::new(TreeNode {
+            val: 8,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: None,
+        })));
+
+        assert_eq!(Solution::get_all_elements(root1, root2), vec![1, 1, 8, 8]);
+    }
 }

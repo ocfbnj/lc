@@ -18,13 +18,18 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::most_common_word(
-            "Bob hit a ball, the hit BALL flew far after it was hit.".to_owned(),
-            vec!["hit".to_owned()]
-        ),
-        "ball".to_owned()
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::most_common_word(
+                "Bob hit a ball, the hit BALL flew far after it was hit.".to_owned(),
+                vec!["hit".to_owned()]
+            ),
+            "ball".to_owned()
+        );
+    }
 }

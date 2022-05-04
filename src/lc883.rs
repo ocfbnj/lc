@@ -24,9 +24,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::projection_area(vec![vec![1, 2], vec![3, 4]]), 17);
-    assert_eq!(Solution::projection_area(vec![vec![2]]), 5);
-    assert_eq!(Solution::projection_area(vec![vec![1, 0], vec![0, 2]]), 8);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::projection_area(vec![vec![1, 2], vec![3, 4]]), 17);
+        assert_eq!(Solution::projection_area(vec![vec![2]]), 5);
+        assert_eq!(Solution::projection_area(vec![vec![1, 0], vec![0, 2]]), 8);
+    }
 }

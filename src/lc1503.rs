@@ -9,11 +9,16 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::get_last_moment(4, vec![4, 3], vec![0, 1]), 4);
-    assert_eq!(
-        Solution::get_last_moment(7, vec![], vec![0, 1, 2, 3, 4, 5, 6, 7]),
-        7
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::get_last_moment(4, vec![4, 3], vec![0, 1]), 4);
+        assert_eq!(
+            Solution::get_last_moment(7, vec![], vec![0, 1, 2, 3, 4, 5, 6, 7]),
+            7
+        );
+    }
 }

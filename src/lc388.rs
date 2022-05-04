@@ -26,22 +26,27 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::length_longest_path("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext".to_owned()),
-        20
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::length_longest_path("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext".to_owned()),
+            20
+        );
+
+        assert_eq!(
         Solution::length_longest_path("dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext".to_owned()),
         32
     );
 
-    assert_eq!(Solution::length_longest_path("a".to_owned()), 0);
+        assert_eq!(Solution::length_longest_path("a".to_owned()), 0);
 
-    assert_eq!(
-        Solution::length_longest_path("file1.txt\nfile2.txt\nlongfile.txt".to_owned()),
-        12
-    );
+        assert_eq!(
+            Solution::length_longest_path("file1.txt\nfile2.txt\nlongfile.txt".to_owned()),
+            12
+        );
+    }
 }

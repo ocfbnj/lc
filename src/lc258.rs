@@ -23,8 +23,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::add_digits(38), 2);
-    assert_eq!(Solution::add_digits(0), 0);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    #[cfg(test)]
+    fn test() {
+        assert_eq!(Solution::add_digits(38), 2);
+        assert_eq!(Solution::add_digits(0), 0);
+    }
 }

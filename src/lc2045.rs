@@ -55,51 +55,56 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::second_minimum(
-            6,
-            vec![
-                vec![1, 2],
-                vec![1, 3],
-                vec![2, 4],
-                vec![3, 5],
-                vec![5, 4],
-                vec![4, 6]
-            ],
-            710,
-            10
-        ),
-        2870
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::second_minimum(
-            5,
-            vec![vec![1, 2], vec![1, 3], vec![1, 4], vec![3, 4], vec![4, 5]],
-            3,
-            5
-        ),
-        13
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::second_minimum(
+                6,
+                vec![
+                    vec![1, 2],
+                    vec![1, 3],
+                    vec![2, 4],
+                    vec![3, 5],
+                    vec![5, 4],
+                    vec![4, 6]
+                ],
+                710,
+                10
+            ),
+            2870
+        );
 
-    assert_eq!(
-        Solution::second_minimum(
-            6,
-            vec![
-                vec![1, 2],
-                vec![1, 3],
-                vec![2, 4],
-                vec![3, 5],
-                vec![5, 4],
-                vec![4, 6]
-            ],
-            3,
-            5
-        ),
-        16
-    );
+        assert_eq!(
+            Solution::second_minimum(
+                5,
+                vec![vec![1, 2], vec![1, 3], vec![1, 4], vec![3, 4], vec![4, 5]],
+                3,
+                5
+            ),
+            13
+        );
 
-    assert_eq!(Solution::second_minimum(2, vec![vec![1, 2]], 3, 2), 11);
+        assert_eq!(
+            Solution::second_minimum(
+                6,
+                vec![
+                    vec![1, 2],
+                    vec![1, 3],
+                    vec![2, 4],
+                    vec![3, 5],
+                    vec![5, 4],
+                    vec![4, 6]
+                ],
+                3,
+                5
+            ),
+            16
+        );
+
+        assert_eq!(Solution::second_minimum(2, vec![vec![1, 2]], 3, 2), 11);
+    }
 }

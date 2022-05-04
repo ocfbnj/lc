@@ -37,17 +37,20 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::push_dominoes("RR.L".to_owned()),
-        "RR.L".to_owned()
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::push_dominoes(".L.R...LR..L..".to_owned()),
-        "LL.RR.LLRRLL..".to_owned()
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::push_dominoes("RR.L".to_owned()),
+            "RR.L".to_owned()
+        );
 
-    println!("{}", std::mem::size_of::<[i32; 2]>());
+        assert_eq!(
+            Solution::push_dominoes(".L.R...LR..L..".to_owned()),
+            "LL.RR.LLRRLL..".to_owned()
+        );
+    }
 }

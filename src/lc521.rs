@@ -10,25 +10,30 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::find_lu_slength("aba".to_owned(), "cdc".to_owned()),
-        3
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::find_lu_slength("aaa".to_owned(), "bbb".to_owned()),
-        3
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::find_lu_slength("aba".to_owned(), "cdc".to_owned()),
+            3
+        );
 
-    assert_eq!(
-        Solution::find_lu_slength("aaa".to_owned(), "aaa".to_owned()),
-        -1
-    );
+        assert_eq!(
+            Solution::find_lu_slength("aaa".to_owned(), "bbb".to_owned()),
+            3
+        );
 
-    assert_eq!(
-        Solution::find_lu_slength("abc".to_owned(), "cba".to_owned()),
-        3
-    );
+        assert_eq!(
+            Solution::find_lu_slength("aaa".to_owned(), "aaa".to_owned()),
+            -1
+        );
+
+        assert_eq!(
+            Solution::find_lu_slength("abc".to_owned(), "cba".to_owned()),
+            3
+        );
+    }
 }

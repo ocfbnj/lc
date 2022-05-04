@@ -36,9 +36,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::find_kth_number(1, 1), 1);
-    assert_eq!(Solution::find_kth_number(2, 2), 2);
-    assert_eq!(Solution::find_kth_number(13, 2), 10);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::find_kth_number(1, 1), 1);
+        assert_eq!(Solution::find_kth_number(2, 2), 2);
+        assert_eq!(Solution::find_kth_number(13, 2), 10);
+    }
 }

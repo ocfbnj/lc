@@ -24,9 +24,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::convert_to_base7(0), "0".to_owned());
-    assert_eq!(Solution::convert_to_base7(100), "202".to_owned());
-    assert_eq!(Solution::convert_to_base7(-7), "-10".to_owned());
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::convert_to_base7(0), "0".to_owned());
+        assert_eq!(Solution::convert_to_base7(100), "202".to_owned());
+        assert_eq!(Solution::convert_to_base7(-7), "-10".to_owned());
+    }
 }

@@ -51,15 +51,20 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::highest_peak(vec![vec![0, 1], vec![0, 0]]),
-        vec![vec![1, 0], vec![2, 1]]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::highest_peak(vec![vec![0, 0, 1], vec![1, 0, 0], vec![0, 0, 0]]),
-        vec![vec![1, 1, 0], vec![0, 1, 1], vec![1, 2, 2]]
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::highest_peak(vec![vec![0, 1], vec![0, 0]]),
+            vec![vec![1, 0], vec![2, 1]]
+        );
+
+        assert_eq!(
+            Solution::highest_peak(vec![vec![0, 0, 1], vec![1, 0, 0], vec![0, 0, 0]]),
+            vec![vec![1, 1, 0], vec![0, 1, 1], vec![1, 2, 2]]
+        );
+    }
 }

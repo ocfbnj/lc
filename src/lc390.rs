@@ -25,8 +25,13 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::last_remaining(9), 6);
-    assert_eq!(Solution::last_remaining(1), 1);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::last_remaining(9), 6);
+        assert_eq!(Solution::last_remaining(1), 1);
+    }
 }

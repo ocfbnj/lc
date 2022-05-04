@@ -31,9 +31,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::largest_palindrome(1), 9);
-    assert_eq!(Solution::largest_palindrome(2), 987);
-    assert_eq!(Solution::largest_palindrome(6), 1218);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::largest_palindrome(1), 9);
+        assert_eq!(Solution::largest_palindrome(2), 987);
+        assert_eq!(Solution::largest_palindrome(6), 1218);
+    }
 }

@@ -55,43 +55,48 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::pacific_atlantic(vec![
-            vec![1, 2, 2, 3, 5],
-            vec![3, 2, 3, 4, 4],
-            vec![2, 4, 5, 3, 1],
-            vec![6, 7, 1, 4, 5],
-            vec![5, 1, 1, 2, 4]
-        ]),
-        vec![
-            vec![0, 4],
-            vec![1, 3],
-            vec![1, 4],
-            vec![2, 2],
-            vec![3, 0],
-            vec![3, 1],
-            vec![4, 0]
-        ]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::pacific_atlantic(vec![vec![2, 1], vec![1, 2]]),
-        vec![vec![0, 0], vec![0, 1], vec![1, 0], vec![1, 1]]
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::pacific_atlantic(vec![
+                vec![1, 2, 2, 3, 5],
+                vec![3, 2, 3, 4, 4],
+                vec![2, 4, 5, 3, 1],
+                vec![6, 7, 1, 4, 5],
+                vec![5, 1, 1, 2, 4]
+            ]),
+            vec![
+                vec![0, 4],
+                vec![1, 3],
+                vec![1, 4],
+                vec![2, 2],
+                vec![3, 0],
+                vec![3, 1],
+                vec![4, 0]
+            ]
+        );
 
-    assert_eq!(
-        Solution::pacific_atlantic(vec![vec![10, 10, 10], vec![10, 1, 10], vec![10, 10, 10]]),
-        vec![
-            vec![0, 0],
-            vec![0, 1],
-            vec![0, 2],
-            vec![1, 0],
-            vec![1, 2],
-            vec![2, 0],
-            vec![2, 1],
-            vec![2, 2]
-        ]
-    );
+        assert_eq!(
+            Solution::pacific_atlantic(vec![vec![2, 1], vec![1, 2]]),
+            vec![vec![0, 0], vec![0, 1], vec![1, 0], vec![1, 1]]
+        );
+
+        assert_eq!(
+            Solution::pacific_atlantic(vec![vec![10, 10, 10], vec![10, 1, 10], vec![10, 10, 10]]),
+            vec![
+                vec![0, 0],
+                vec![0, 1],
+                vec![0, 2],
+                vec![1, 0],
+                vec![1, 2],
+                vec![2, 0],
+                vec![2, 1],
+                vec![2, 2]
+            ]
+        );
+    }
 }

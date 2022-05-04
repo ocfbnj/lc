@@ -39,28 +39,33 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::find_ball(vec![
-            vec![1, 1, 1, -1, -1],
-            vec![1, 1, 1, -1, -1],
-            vec![-1, -1, -1, 1, 1],
-            vec![1, 1, 1, 1, -1],
-            vec![-1, -1, -1, -1, -1]
-        ]),
-        vec![1, -1, -1, -1, -1]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(Solution::find_ball(vec![vec![-1]]), vec![-1]);
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::find_ball(vec![
+                vec![1, 1, 1, -1, -1],
+                vec![1, 1, 1, -1, -1],
+                vec![-1, -1, -1, 1, 1],
+                vec![1, 1, 1, 1, -1],
+                vec![-1, -1, -1, -1, -1]
+            ]),
+            vec![1, -1, -1, -1, -1]
+        );
 
-    assert_eq!(
-        Solution::find_ball(vec![
-            vec![1, 1, 1, 1, 1, 1],
-            vec![-1, -1, -1, -1, -1, -1],
-            vec![1, 1, 1, 1, 1, 1],
-            vec![-1, -1, -1, -1, -1, -1]
-        ]),
-        vec![0, 1, 2, 3, 4, -1]
-    );
+        assert_eq!(Solution::find_ball(vec![vec![-1]]), vec![-1]);
+
+        assert_eq!(
+            Solution::find_ball(vec![
+                vec![1, 1, 1, 1, 1, 1],
+                vec![-1, -1, -1, -1, -1, -1],
+                vec![1, 1, 1, 1, 1, 1],
+                vec![-1, -1, -1, -1, -1, -1]
+            ]),
+            vec![0, 1, 2, 3, 4, -1]
+        );
+    }
 }

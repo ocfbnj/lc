@@ -53,18 +53,23 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::min_jumps([100, -23, -23, 404, 100, 23, 23, 23, 3, 404].to_vec()),
-        3
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(Solution::min_jumps([7].to_vec()), 0);
-    assert_eq!(Solution::min_jumps([7, 6, 9, 6, 9, 6, 9, 7].to_vec()), 1);
-    assert_eq!(Solution::min_jumps([6, 1, 9].to_vec()), 2);
-    assert_eq!(
-        Solution::min_jumps([11, 22, 7, 7, 7, 7, 7, 7, 7, 22, 13].to_vec()),
-        3
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::min_jumps([100, -23, -23, 404, 100, 23, 23, 23, 3, 404].to_vec()),
+            3
+        );
+
+        assert_eq!(Solution::min_jumps([7].to_vec()), 0);
+        assert_eq!(Solution::min_jumps([7, 6, 9, 6, 9, 6, 9, 7].to_vec()), 1);
+        assert_eq!(Solution::min_jumps([6, 1, 9].to_vec()), 2);
+        assert_eq!(
+            Solution::min_jumps([11, 22, 7, 7, 7, 7, 7, 7, 7, 22, 13].to_vec()),
+            3
+        );
+    }
 }

@@ -41,14 +41,19 @@ impl DetectSquares {
     }
 }
 
-#[test]
-fn test() {
-    let mut obj = DetectSquares::new();
-    obj.add(vec![3, 10]);
-    obj.add(vec![11, 2]);
-    obj.add(vec![3, 2]);
-    assert_eq!(obj.count(vec![11, 10]), 1);
-    assert_eq!(obj.count(vec![14, 8]), 0);
-    obj.add(vec![11, 2]);
-    assert_eq!(obj.count(vec![11, 10]), 2);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let mut obj = DetectSquares::new();
+        obj.add(vec![3, 10]);
+        obj.add(vec![11, 2]);
+        obj.add(vec![3, 2]);
+        assert_eq!(obj.count(vec![11, 10]), 1);
+        assert_eq!(obj.count(vec![14, 8]), 0);
+        obj.add(vec![11, 2]);
+        assert_eq!(obj.count(vec![11, 10]), 2);
+    }
 }

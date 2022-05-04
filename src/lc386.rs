@@ -26,12 +26,17 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::lexical_order(13),
-        vec![1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(Solution::lexical_order(2), vec![1, 2]);
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::lexical_order(13),
+            vec![1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]
+        );
+
+        assert_eq!(Solution::lexical_order(2), vec![1, 2]);
+    }
 }

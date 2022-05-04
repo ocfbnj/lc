@@ -30,25 +30,33 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    let node = Some(Box::new(ListNode {
-        val: 0,
-        next: Some(Box::new(ListNode {
-            val: 1,
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let node = Some(Box::new(ListNode {
+            val: 0,
             next: Some(Box::new(ListNode {
-                val: 2,
+                val: 1,
                 next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode { val: 4, next: None })),
+                    val: 2,
+                    next: Some(Box::new(ListNode {
+                        val: 3,
+                        next: Some(Box::new(ListNode { val: 4, next: None })),
+                    })),
                 })),
             })),
-        })),
-    }));
+        }));
 
-    let solution = Solution::new(node);
+        let solution = Solution::new(node);
 
-    for _ in 0..5 {
-        println!("{}", solution.get_random());
+        let array = [0, 1, 2, 3];
+        assert!(array.contains(&solution.get_random()));
+        assert!(array.contains(&solution.get_random()));
+        assert!(array.contains(&solution.get_random()));
+        assert!(array.contains(&solution.get_random()));
+        assert!(array.contains(&solution.get_random()));
     }
 }

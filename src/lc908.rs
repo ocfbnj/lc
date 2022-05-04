@@ -15,9 +15,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::smallest_range_i(vec![1], 0), 0);
-    assert_eq!(Solution::smallest_range_i(vec![0, 10], 2), 6);
-    assert_eq!(Solution::smallest_range_i(vec![1, 3, 6], 3), 0);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::smallest_range_i(vec![1], 0), 0);
+        assert_eq!(Solution::smallest_range_i(vec![0, 10], 2), 6);
+        assert_eq!(Solution::smallest_range_i(vec![1, 3, 6], 3), 0);
+    }
 }

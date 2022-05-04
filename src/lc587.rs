@@ -95,22 +95,27 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::outer_trees(vec![
-            vec![1, 1],
-            vec![2, 2],
-            vec![2, 0],
-            vec![2, 4],
-            vec![3, 3],
-            vec![4, 2]
-        ]),
-        vec![vec![2, 0], vec![4, 2], vec![3, 3], vec![2, 4], vec![1, 1]]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::outer_trees(vec![vec![1, 2], vec![2, 2], vec![4, 2]]),
-        vec![vec![1, 2], vec![2, 2], vec![4, 2]]
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::outer_trees(vec![
+                vec![1, 1],
+                vec![2, 2],
+                vec![2, 0],
+                vec![2, 4],
+                vec![3, 3],
+                vec![4, 2]
+            ]),
+            vec![vec![2, 0], vec![4, 2], vec![3, 3], vec![2, 4], vec![1, 1]]
+        );
+
+        assert_eq!(
+            Solution::outer_trees(vec![vec![1, 2], vec![2, 2], vec![4, 2]]),
+            vec![vec![1, 2], vec![2, 2], vec![4, 2]]
+        );
+    }
 }

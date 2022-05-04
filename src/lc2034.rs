@@ -55,15 +55,20 @@ impl StockPrice {
     }
 }
 
-#[test]
-fn test() {
-    let mut stock_price = StockPrice::new();
-    stock_price.update(1, 10);
-    stock_price.update(2, 5);
-    assert_eq!(stock_price.current(), 5);
-    assert_eq!(stock_price.maximum(), 10);
-    stock_price.update(1, 3);
-    assert_eq!(stock_price.maximum(), 5);
-    stock_price.update(4, 2);
-    assert_eq!(stock_price.minimum(), 2);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let mut stock_price = StockPrice::new();
+        stock_price.update(1, 10);
+        stock_price.update(2, 5);
+        assert_eq!(stock_price.current(), 5);
+        assert_eq!(stock_price.maximum(), 10);
+        stock_price.update(1, 3);
+        assert_eq!(stock_price.maximum(), 5);
+        stock_price.update(4, 2);
+        assert_eq!(stock_price.minimum(), 2);
+    }
 }

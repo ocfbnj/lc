@@ -21,14 +21,15 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::number_of_matches(1), 0);
-    assert_eq!(Solution::number_of_matches(2), 1);
-    assert_eq!(Solution::number_of_matches(7), 6);
-    assert_eq!(Solution::number_of_matches(14), 13);
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    for i in 1..=200 {
-        println!("{}", Solution::number_of_matches(i));
+    #[test]
+    fn test() {
+        assert_eq!(Solution::number_of_matches(1), 0);
+        assert_eq!(Solution::number_of_matches(2), 1);
+        assert_eq!(Solution::number_of_matches(7), 6);
+        assert_eq!(Solution::number_of_matches(14), 13);
     }
 }

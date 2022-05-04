@@ -30,10 +30,15 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::count_vowel_permutation(1), 5);
-    assert_eq!(Solution::count_vowel_permutation(2), 10);
-    assert_eq!(Solution::count_vowel_permutation(5), 68);
-    assert_eq!(Solution::count_vowel_permutation(20000), 759959057);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::count_vowel_permutation(1), 5);
+        assert_eq!(Solution::count_vowel_permutation(2), 10);
+        assert_eq!(Solution::count_vowel_permutation(5), 68);
+        assert_eq!(Solution::count_vowel_permutation(20000), 759959057);
+    }
 }

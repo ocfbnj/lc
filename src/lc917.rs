@@ -34,16 +34,21 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::reverse_only_letters("".to_owned()), "");
-    assert_eq!(Solution::reverse_only_letters("ab-cd".to_owned()), "dc-ba");
-    assert_eq!(
-        Solution::reverse_only_letters("a-bC-dEf-ghIj".to_owned()),
-        "j-Ih-gfE-dCba"
-    );
-    assert_eq!(
-        Solution::reverse_only_letters("Test1ng-Leet=code-Q!".to_owned()),
-        "Qedo1ct-eeLg=ntse-T!"
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::reverse_only_letters("".to_owned()), "");
+        assert_eq!(Solution::reverse_only_letters("ab-cd".to_owned()), "dc-ba");
+        assert_eq!(
+            Solution::reverse_only_letters("a-bC-dEf-ghIj".to_owned()),
+            "j-Ih-gfE-dCba"
+        );
+        assert_eq!(
+            Solution::reverse_only_letters("Test1ng-Leet=code-Q!".to_owned()),
+            "Qedo1ct-eeLg=ntse-T!"
+        );
+    }
 }

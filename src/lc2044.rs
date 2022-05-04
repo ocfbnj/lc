@@ -23,9 +23,14 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(Solution::count_max_or_subsets(vec![3, 1]), 2);
-    assert_eq!(Solution::count_max_or_subsets(vec![2, 2, 2]), 7);
-    assert_eq!(Solution::count_max_or_subsets(vec![3, 2, 1, 5]), 6);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(Solution::count_max_or_subsets(vec![3, 1]), 2);
+        assert_eq!(Solution::count_max_or_subsets(vec![2, 2, 2]), 7);
+        assert_eq!(Solution::count_max_or_subsets(vec![3, 2, 1, 5]), 6);
+    }
 }

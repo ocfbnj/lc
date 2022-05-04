@@ -35,22 +35,27 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::good_days_to_rob_bank(vec![5, 3, 3, 3, 5, 6, 2], 2),
-        vec![2, 3]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert_eq!(
-        Solution::good_days_to_rob_bank(vec![1, 1, 1, 1, 1], 0),
-        vec![0, 1, 2, 3, 4]
-    );
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::good_days_to_rob_bank(vec![5, 3, 3, 3, 5, 6, 2], 2),
+            vec![2, 3]
+        );
 
-    assert_eq!(
-        Solution::good_days_to_rob_bank(vec![1, 2, 3, 4, 5, 6], 2),
-        vec![]
-    );
+        assert_eq!(
+            Solution::good_days_to_rob_bank(vec![1, 1, 1, 1, 1], 0),
+            vec![0, 1, 2, 3, 4]
+        );
 
-    assert_eq!(Solution::good_days_to_rob_bank(vec![1], 5), vec![]);
+        assert_eq!(
+            Solution::good_days_to_rob_bank(vec![1, 2, 3, 4, 5, 6], 2),
+            vec![]
+        );
+
+        assert_eq!(Solution::good_days_to_rob_bank(vec![1], 5), vec![]);
+    }
 }

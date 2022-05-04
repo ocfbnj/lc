@@ -26,11 +26,15 @@ impl Solution {
     }
 }
 
-/**
- * Your Solution object will be instantiated and called as such:
- * let obj = Solution::new(nums);
- * let ret_1: i32 = obj.pick(target);
- */
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-#[test]
-fn test() {}
+    #[test]
+    fn test() {
+        let solution = Solution::new(vec![1, 2, 3]);
+        assert_eq!(solution.pick(1), 0);
+        assert_eq!(solution.pick(2), 1);
+        assert_eq!(solution.pick(3), 2);
+    }
+}

@@ -31,23 +31,28 @@ impl Solution {
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(
-        Solution::find_restaurant(
-            vec![
-                "Shogun".to_owned(),
-                "Tapioca Express".to_owned(),
-                "Burger King".to_owned(),
-                "KFC".to_owned(),
-            ],
-            vec![
-                "Piatti".to_owned(),
-                "The Grill at Torrey Pines".to_owned(),
-                "Hungry Hunter Steakhouse".to_owned(),
-                "Shogun".to_owned(),
-            ],
-        ),
-        vec!["Shogun".to_owned()]
-    );
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(
+            Solution::find_restaurant(
+                vec![
+                    "Shogun".to_owned(),
+                    "Tapioca Express".to_owned(),
+                    "Burger King".to_owned(),
+                    "KFC".to_owned(),
+                ],
+                vec![
+                    "Piatti".to_owned(),
+                    "The Grill at Torrey Pines".to_owned(),
+                    "Hungry Hunter Steakhouse".to_owned(),
+                    "Shogun".to_owned(),
+                ],
+            ),
+            vec!["Shogun".to_owned()]
+        );
+    }
 }
