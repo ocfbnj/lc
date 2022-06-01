@@ -21,6 +21,7 @@ pub mod solution {
     pub mod lc2100;
     pub mod lc258;
     pub mod lc261;
+    pub mod lc269;
     pub mod lc382;
     pub mod lc386;
     pub mod lc388;
@@ -29,6 +30,7 @@ pub mod solution {
     pub mod lc422;
     pub mod lc432;
     pub mod lc433;
+    pub mod lc437;
     pub mod lc440;
     pub mod lc449;
     pub mod lc479;
@@ -52,5 +54,6 @@ pub mod solution {
     pub mod lc933;
     pub mod lc937;
     pub mod lc944;
+    pub mod lc953;
     pub mod lc969;
 }
