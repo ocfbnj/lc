@@ -33,6 +33,7 @@ pub mod solution {
     pub mod lc437;
     pub mod lc440;
     pub mod lc449;
+    pub mod lc450;
     pub mod lc479;
     pub mod lc504;
     pub mod lc521;
