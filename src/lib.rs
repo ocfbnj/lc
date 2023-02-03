@@ -1,6 +1,7 @@
 pub mod types;
 
 pub mod solution {
+    pub mod lc1145;
     pub mod lc1220;
     pub mod lc1305;
     pub mod lc1332;
